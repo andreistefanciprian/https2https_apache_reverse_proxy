@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: frontend:$VERSION
+    container_name: frontend
+    ports:
+      - 80:80
+      - 8443:443
+    networks:
+      - test-net
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: backend:$VERSION
+    container_name: backend
+    ports:
+        - 443:443
+    networks:
+        - test-net
+
+networks:
+  test-net:
