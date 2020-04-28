@@ -37,7 +37,7 @@ docker container logs -f frontend
 docker container logs -f backend
 ```
 
-# Cleanup
+## Cleanup
 
 ```bash
 VERSION=4.28.2 docker-compose down
