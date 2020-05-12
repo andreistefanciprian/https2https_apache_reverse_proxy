@@ -6,7 +6,6 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/*
 
 COPY frontend/default_website.conf /etc/apache2/sites-available/default_website.conf
-COPY ssl/. /etc/apache2/ssl/.
 
 RUN a2enmod proxy proxy_http ssl \
 && a2dissite 000-default \

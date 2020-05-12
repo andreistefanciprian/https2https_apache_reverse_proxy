@@ -13,6 +13,8 @@ services:
       - 8443:443
     networks:
       - test-net
+    volumes:
+      - ./ssl:/etc/apache2/ssl
 
   backend:
     build:
@@ -24,6 +26,8 @@ services:
         - 443:443
     networks:
         - test-net
+    volumes:
+      - ./ssl:/etc/apache2/ssl
 
 networks:
   test-net:
